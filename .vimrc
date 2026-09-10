@@ -20,7 +20,6 @@ set nosmartindent
 set autoindent
 set expandtab 
 set smarttab
-set number relativenumber
 set splitright
 set splitbelow
 set tabstop=8
@@ -47,7 +46,7 @@ augroup c_margin
         autocmd!
         autocmd Filetype c,cpp setlocal colorcolumn=80
         highlight OverLen ctermbg=darkred ctermfg=white guibg=#592929
-        match OverLen /\%81v.\+/
+        autocmd Filetype c,cpp match OverLen /\%81v.\+/
 augroup END
 
 augroup c_style
@@ -58,12 +57,6 @@ augroup END
 augroup c_comments
         autocmd!
         autocmd FileType c,cpp setlocal comments=s1:/*,m:\ *,ex:\ */
-augroup END
-
-augroup number_toggle
-        autocmd!
-        autocmd BufEnter,FocusGained,WinEnter * set rnu
-        autocmd BufLeave,FocusLost,WinLeave   * set nornu
 augroup END
 
 " #Functions
