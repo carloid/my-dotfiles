@@ -2,8 +2,11 @@
 
 xterm*renderFont: true
 xterm*faceName: Consolas:style=Regular
-xterm*faceSize: 14
+xterm*faceSize: 16
 xterm*faceNameDoubleSize: false
 xterm*antialias: true 
 
 XTerm*selectToClipboard: true
+XTerm*backarrowKey: false
+XTerm*ttyModes: erase ^?
+XTerm*vt100.geometry: 80x30

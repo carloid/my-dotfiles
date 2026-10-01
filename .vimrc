@@ -1,7 +1,7 @@
 " #Editor settings
 
-syntax on
-colorscheme studio98 
+syntax off
+colorscheme lunaperche
 
 " Transparent background
 " hi Normal ctermbg=NONE guibg=NONE
