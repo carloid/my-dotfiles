@@ -43,14 +43,18 @@ set statusline+=\ %p%%
 set statusline+=\ 
 
 augroup c_style
-        autocmd!
-        autocmd BufRead,BufNewFile *.h setfiletype cpp
-        autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    autocmd!
+    autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 augroup END
 
 augroup makefile
-        autocmd!
-        autocmd FileType make setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+    autocmd!
+    autocmd FileType make setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+augroup END
+
+augroup cpp_headers
+    autocmd!
+    autocmd BufNewFile,BufRead *.h setlocal filetype=cpp 
 augroup END
 
 " #Functions
