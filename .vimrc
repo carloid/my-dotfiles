@@ -1,7 +1,9 @@
 " #Editor settings
 
-syntax off
-colorscheme lunaperche
+syntax on
+
+set background=dark
+colorscheme blowtorch 
 
 " Transparent background
 " hi Normal ctermbg=NONE guibg=NONE
@@ -20,8 +22,8 @@ set expandtab
 set smarttab
 set splitright
 set splitbelow
-set tabstop=8
-set shiftwidth=8
+set tabstop=4
+set shiftwidth=4
 
 " Do not create any swap files
 set noswapfile
@@ -40,21 +42,14 @@ set statusline+=\ %l:%c
 set statusline+=\ %p%%
 set statusline+=\ 
 
-augroup c_margin
-        autocmd!
-        autocmd Filetype c,cpp setlocal colorcolumn=80
-        highlight OverLen ctermbg=darkred ctermfg=white guibg=#592929
-        autocmd Filetype c,cpp match OverLen /\%81v.\+/
-augroup END
-
 augroup c_style
         autocmd!
-        autocmd FileType c,cpp,make setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
+        autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 augroup END
 
-augroup c_comments
+augroup makefile
         autocmd!
-        autocmd FileType c,cpp setlocal comments=s1:/*,m:\ *,ex:\ */
+        autocmd FileType make setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 augroup END
 
 " #Functions
