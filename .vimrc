@@ -44,6 +44,7 @@ set statusline+=\
 
 augroup c_style
         autocmd!
+        autocmd BufRead,BufNewFile *.h setfiletype cpp
         autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 augroup END
 
@@ -114,18 +115,18 @@ function! GetRelativeFile()
     endif
     
     if ext == 'cpp' || ext == 'cc' || ext == 'inl'
-        let swap = base . '.hpp'
+        let swap = base . '.h'
     elseif ext == 'c'
         let swap = base . '.h'
     elseif ext == 'h'
-        let swap = base . '.c'
-    elseif ext == 'hpp'
+        let swap = base . '.cpp'
+    elseif ext == 'h'
         if filereadable(base . '.cpp')
             let swap = base . '.cpp'
         elseif filereadable(base . '.inl')
             let swap = base . '.inl'
         else
-            let swap = base . '.cc'
+            let swap = base . '.cpp'
         endif
     endif
 
