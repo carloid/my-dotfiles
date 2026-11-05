@@ -13,7 +13,7 @@ colorscheme blowtorch
 " Indentation options
 filetype plugin indent on
 set cindent
-"set formatoptions+=ro
+set formatoptions+=ro
 set cinoptions={0,(0,m1,c0
 
 set nosmartindent
@@ -45,6 +45,7 @@ set statusline+=\
 augroup c_style
     autocmd!
     autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    autocmd FileType c,cpp setlocal comments-=://
 augroup END
 
 augroup makefile
