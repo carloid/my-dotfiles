@@ -13,7 +13,7 @@ colorscheme blowtorch
 " Indentation options
 filetype plugin indent on
 set cindent
-set formatoptions+=ro
+"set formatoptions+=ro
 set cinoptions={0,(0,m1,c0
 
 set nosmartindent
